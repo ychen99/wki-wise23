@@ -7,7 +7,6 @@ from typing import Tuple,List, Dict, Union
 
 
 def score(test_dir : str='../test/') -> Dict[str, Union[float, List[int]]]:
-    test_dir = r"L:\Wettbewerb kuenstliche Intelligenz in der Medizin\_datasets\SeizureOnset\training_mini"
     """
     Berechnet relevante Metriken des Wettbewerbs, sowie weitere Metriken
     Parameters
