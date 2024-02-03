@@ -16,7 +16,11 @@ from sklearn.model_selection import StratifiedKFold
 import json
 from sklearn.ensemble import RandomForestClassifier
 
-
+"""
+the whole training process is in the rfc_train.ipynb, the first four functions there are same with here
+If you start with this file, you can just skip to extract_eeg_data() in rfc_train.ipynb 
+Thanks
+"""
 #butter band pass filter
 def butter_bandpass_filter(_signal, lowcut, highcut, freq, order=4):
     """
@@ -79,7 +83,7 @@ def pre_processing(_channels, _data, fr):
         signal_filter = butter_bandpass_filter(_signal=signal, lowcut=0.5, #apply butter bandpass filter
                                                    highcut=70.0, freq=fr)
 
-        # Calculate FFT and mean amplitude
+        # Calculate FFT 
         spectrum = fft.fft(signal_filter)   #fast fourier
         amplitude_means[j] = np.mean(np.abs(spectrum)) # three montage, store the mean amplitude of each monge
         amplitude_max[j] = np.max(np.abs(spectrum))# three montage, store the max amplitude of each monge
